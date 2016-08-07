@@ -114,5 +114,15 @@ namespace FoundationDataTool
 
             areaForm.Show();
         }
+
+        /// <summary>
+        /// 链接到数据库
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 连接ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

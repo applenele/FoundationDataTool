@@ -1,6 +1,6 @@
 ﻿namespace FoundationDataTool.Forms
 {
-    partial class CountyForm
+    partial class VillageForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,22 +35,21 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(45, 34);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(533, 355);
+            this.dataGridView1.Size = new System.Drawing.Size(542, 328);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // CountyForm
+            // VillageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 443);
+            this.ClientSize = new System.Drawing.Size(644, 400);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "CountyForm";
-            this.Text = "CountyForm";
-            this.Load += new System.EventHandler(this.CountyForm_Load);
+            this.Name = "VillageForm";
+            this.Text = "VillageForm";
+            this.Load += new System.EventHandler(this.VillageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -109,6 +109,18 @@
     <Compile Include="Forms\CountyForm.Designer.cs">
       <DependentUpon>CountyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TownForm.Designer.cs">
+      <DependentUpon>TownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\VillageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VillageForm.Designer.cs">
+      <DependentUpon>VillageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201608070843599_init.cs" />
     <Compile Include="Migrations\201608070843599_init.Designer.cs">
       <DependentUpon>201608070843599_init.cs</DependentUpon>
@@ -141,6 +153,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CountyForm.resx">
       <DependentUpon>CountyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TownForm.resx">
+      <DependentUpon>TownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VillageForm.resx">
+      <DependentUpon>VillageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608070843599_init.resx">
       <DependentUpon>201608070843599_init.cs</DependentUpon>
