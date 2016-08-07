@@ -103,6 +103,16 @@ namespace FoundationDataTool
             }
         }
 
+        /// <summary>
+        /// 查看地域信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 查看地域信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.Area areaForm = new Forms.Area();
 
+            areaForm.Show();
+        }
     }
 }
