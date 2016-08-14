@@ -20,6 +20,19 @@ namespace FoundationDataTool.Common
             ["Char"] = "CHARACTER",
         };
 
+        public static Dictionary<string, string> MysqlToCsharpTypeDict = new Dictionary<string, string>
+        {
+            ["int"] = "Int32",
+            ["varchar"] = "string",
+            ["char"] = "string",
+            ["longtext"] = "string",
+            ["bool"] = "bool",
+            ["double"] = "double",
+            ["DECIMAL"] = "Decimal",
+            ["datetime"] = "DateTime",
+            ["FLOAT"] = "Single"
+        };
+
         public static Dictionary<string, string> SqliteTypeDict = new Dictionary<string, string>
         {
             ["Int32"] = "INTEGER",

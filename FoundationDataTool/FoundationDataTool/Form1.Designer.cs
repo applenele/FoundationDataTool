@@ -35,6 +35,7 @@
             this.查看地域信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据库工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.实体生成器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,14 +79,15 @@
             // 查看地域信息ToolStripMenuItem
             // 
             this.查看地域信息ToolStripMenuItem.Name = "查看地域信息ToolStripMenuItem";
-            this.查看地域信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查看地域信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.查看地域信息ToolStripMenuItem.Text = "查看地域信息";
             this.查看地域信息ToolStripMenuItem.Click += new System.EventHandler(this.查看地域信息ToolStripMenuItem_Click);
             // 
             // 数据库工具ToolStripMenuItem
             // 
             this.数据库工具ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.连接ToolStripMenuItem});
+            this.连接ToolStripMenuItem,
+            this.实体生成器ToolStripMenuItem});
             this.数据库工具ToolStripMenuItem.Name = "数据库工具ToolStripMenuItem";
             this.数据库工具ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
             this.数据库工具ToolStripMenuItem.Text = "数据库工具";
@@ -96,6 +98,13 @@
             this.连接ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.连接ToolStripMenuItem.Text = "连接";
             this.连接ToolStripMenuItem.Click += new System.EventHandler(this.连接ToolStripMenuItem_Click);
+            // 
+            // 实体生成器ToolStripMenuItem
+            // 
+            this.实体生成器ToolStripMenuItem.Name = "实体生成器ToolStripMenuItem";
+            this.实体生成器ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.实体生成器ToolStripMenuItem.Text = "实体生成器";
+            this.实体生成器ToolStripMenuItem.Click += new System.EventHandler(this.实体生成器ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -124,6 +133,7 @@
         private System.Windows.Forms.ToolStripMenuItem 查看地域信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据库工具ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 连接ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 实体生成器ToolStripMenuItem;
     }
 }
 

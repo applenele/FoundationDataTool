@@ -54,5 +54,16 @@ namespace FoundationDataTool.Extensions
 
             return word;
         }
+
+
+        /// <summary>
+        /// 首字母大写
+        /// </summary>
+        /// <param name="inputValue"></param>
+        /// <returns></returns>
+        public static string FirstLetterToUpper(this string inputValue)
+        {
+            return System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(inputValue);
+        }
     }
 }

@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\DataMappingAttribute.cs" />
     <Compile Include="Common\DBCsharpTypeDict.cs" />
     <Compile Include="Common\EFCommon.cs" />
     <Compile Include="DataModels\City.cs" />
@@ -109,6 +110,12 @@
     <Compile Include="Forms\CountyForm.Designer.cs">
       <DependentUpon>CountyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ModelGenerate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModelGenerate.Designer.cs">
+      <DependentUpon>ModelGenerate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TownForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +128,7 @@
     <Compile Include="Forms\VillageForm.Designer.cs">
       <DependentUpon>VillageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\DataTableHelper.cs" />
     <Compile Include="Migrations\201608070843599_init.cs" />
     <Compile Include="Migrations\201608070843599_init.Designer.cs">
       <DependentUpon>201608070843599_init.cs</DependentUpon>
@@ -141,6 +149,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sql\EntityToSql.cs" />
+    <Compile Include="DataModels\DataBase\ColumnInfo.cs" />
+    <Compile Include="Tool\MySql\MySqlHelper.cs" />
+    <Compile Include="Tool\MySql\MySqlHelperSchemaExtension.cs" />
+    <Compile Include="DataModels\DataBase\TableInfo.cs" />
+    <Compile Include="Tool\Sql\SqlHelper.cs" />
+    <Compile Include="Tool\Sql\SqlHelperSchemaExtension.cs" />
     <Compile Include="WinFormExt\ListItem.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -153,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CountyForm.resx">
       <DependentUpon>CountyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModelGenerate.resx">
+      <DependentUpon>ModelGenerate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TownForm.resx">
       <DependentUpon>TownForm.cs</DependentUpon>
@@ -191,6 +208,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

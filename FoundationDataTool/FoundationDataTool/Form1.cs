@@ -1,6 +1,8 @@
 ﻿using FoundationDataTool.Common;
 using FoundationDataTool.DataModels;
+using FoundationDataTool.Forms;
 using FoundationDataTool.Models;
+using FoundationDataTool.Tool.MySql;
 using FoundationDataTool.WinFormExt;
 using System;
 using System.Collections.Generic;
@@ -123,6 +125,12 @@ namespace FoundationDataTool
         private void 连接ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void 实体生成器ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModelGenerate form = new ModelGenerate();
+            form.Show();
         }
     }
 }
