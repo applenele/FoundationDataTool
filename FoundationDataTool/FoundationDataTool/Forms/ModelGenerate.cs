@@ -14,13 +14,14 @@ using System.Windows.Forms;
 
 namespace FoundationDataTool.Forms
 {
-    public partial class ModelGenerate : Form
+    public partial class ModelGenerate : BaseForm
     {
 
         public static string connectionString = "";
 
         public ModelGenerate()
         {
+            base.Title = "实体生成器";
             InitializeComponent();
         }
 
@@ -74,17 +75,24 @@ namespace FoundationDataTool.Forms
         private void btnGenerateModel_Click(object sender, EventArgs e)
         {
             List<string> tables = new List<string>();
-            for (int i = 0; i < chlTables.Items.Count; i++)
+            if (chlTables.Items.Count == 0)
             {
-                if (chlTables.GetItemChecked(i))//先判断是否被选中
-                {
-                    tables.Add(chlTables.GetItemText(chlTables.Items[i]));
-                }
-            }
-            List<string> modelList = new List<string>();
-            modelList = GenerateModels(tables);
+                MessageBox.Show("请选择表");
 
-            txtResult.Text = string.Join(Environment.NewLine, modelList.ToArray());
+            }
+            else
+            {
+                for (int i = 0; i < chlTables.Items.Count; i++)
+                {
+                    if (chlTables.GetItemChecked(i))//先判断是否被选中
+                    {
+                        tables.Add(chlTables.GetItemText(chlTables.Items[i]));
+                    }
+                }
+                List<string> modelList = new List<string>();
+                modelList = GenerateModels(tables);
+                txtResult.Text = string.Join(Environment.NewLine, modelList.ToArray());
+            }
         }
 
         /// <summary>

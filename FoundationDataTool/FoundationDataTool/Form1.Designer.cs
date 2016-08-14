@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -95,14 +96,14 @@
             // 连接ToolStripMenuItem
             // 
             this.连接ToolStripMenuItem.Name = "连接ToolStripMenuItem";
-            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.连接ToolStripMenuItem.Text = "连接";
             this.连接ToolStripMenuItem.Click += new System.EventHandler(this.连接ToolStripMenuItem_Click);
             // 
             // 实体生成器ToolStripMenuItem
             // 
             this.实体生成器ToolStripMenuItem.Name = "实体生成器ToolStripMenuItem";
-            this.实体生成器ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.实体生成器ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.实体生成器ToolStripMenuItem.Text = "实体生成器";
             this.实体生成器ToolStripMenuItem.Click += new System.EventHandler(this.实体生成器ToolStripMenuItem_Click);
             // 
@@ -114,6 +115,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "基础信息工具";

@@ -214,7 +214,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtConnectstring);
             this.Name = "ModelGenerate";
-            this.Text = "ModelGenerate";
+            this.Text = "实体生成器";
             this.Load += new System.EventHandler(this.ModelGenerate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

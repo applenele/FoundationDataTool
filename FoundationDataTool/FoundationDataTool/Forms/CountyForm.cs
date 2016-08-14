@@ -11,13 +11,14 @@ using System.Windows.Forms;
 
 namespace FoundationDataTool.Forms
 {
-    public partial class CountyForm : Form
+    public partial class CountyForm : BaseForm
     {
 
         public int CityId { set; get; }
 
         public CountyForm(int cityId)
         {
+            base.Title = "区域";
             this.CityId = cityId;
             InitializeComponent();
         }

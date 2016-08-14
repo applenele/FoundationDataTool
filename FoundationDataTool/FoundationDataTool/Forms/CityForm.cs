@@ -11,12 +11,13 @@ using System.Windows.Forms;
 
 namespace FoundationDataTool.Forms
 {
-    public partial class CityForm : Form
+    public partial class CityForm : BaseForm
     {
         public int ProvinceId { set; get; }
 
         public CityForm(int provinceId)
         {
+            base.Title = "城市";
             this.ProvinceId = provinceId;
             InitializeComponent();
         }
@@ -25,7 +26,7 @@ namespace FoundationDataTool.Forms
         {
             using (DB db = new DB())
             {
-                List<City> cities = db.Cities.Where(x=>x.ProvinceId == ProvinceId).ToList();
+                List<City> cities = db.Cities.Where(x => x.ProvinceId == ProvinceId).ToList();
                 dataGridView1.DataSource = cities;
                 dataGridView1.Columns[0].HeaderText = "Id";
                 dataGridView1.Columns[1].HeaderText = "城市";

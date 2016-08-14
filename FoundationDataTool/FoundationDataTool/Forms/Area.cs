@@ -11,10 +11,11 @@ using System.Windows.Forms;
 
 namespace FoundationDataTool.Forms
 {
-    public partial class Area : Form
+    public partial class Area : BaseForm
     {
         public Area()
         {
+            base.Title = "区域";
             InitializeComponent();
         }
 
