@@ -75,10 +75,9 @@ namespace FoundationDataTool.Forms
         private void btnGenerateModel_Click(object sender, EventArgs e)
         {
             List<string> tables = new List<string>();
-            if (chlTables.Items.Count == 0)
+            if (chlTables.Items.Count == 0 || chlTables.SelectedItems.Count == 0)
             {
                 MessageBox.Show("请选择表");
-
             }
             else
             {
