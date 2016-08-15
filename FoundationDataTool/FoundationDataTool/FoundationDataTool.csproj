@@ -62,6 +62,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Workflow.ComponentModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -90,6 +92,7 @@
     <Compile Include="DataModels\Town.cs" />
     <Compile Include="DataModels\Village.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Extensions\TypeParseExtenions.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
