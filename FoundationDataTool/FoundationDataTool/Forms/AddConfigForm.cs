@@ -11,10 +11,11 @@ using System.Windows.Forms;
 
 namespace FoundationDataTool.Forms
 {
-    public partial class AddConfigForm : Form
+    public partial class AddConfigForm : BaseForm
     {
         public AddConfigForm()
         {
+            base.Title = "增加配置";
             InitializeComponent();
         }
 
@@ -37,12 +38,22 @@ namespace FoundationDataTool.Forms
                     MessageBox.Show("增加配置失败");
                 }
             }
+            //获取父窗口 调用窗口的更新方法
+            ConfigForm form = (ConfigForm)this.Owner;
+            form.LoadConfigList();
 
+            //关闭该窗体
+            this.Close();
         }
 
         private void btnCancle_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AddConfigForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

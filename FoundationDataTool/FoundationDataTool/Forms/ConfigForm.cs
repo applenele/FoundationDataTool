@@ -64,6 +64,7 @@ namespace FoundationDataTool.Forms
         {
             string selectedId = this.dgwConfig[0, this.dgwConfig.CurrentCell.RowIndex].Value.ToString();
             EditConfigForm form = new EditConfigForm(Convert.ToInt32(selectedId));
+            form.Owner = this;
             form.Show();
         }
 
@@ -89,7 +90,9 @@ namespace FoundationDataTool.Forms
 
         private void btnAddConfig_Click(object sender, EventArgs e)
         {
+            ///打开子窗体
             AddConfigForm form = new AddConfigForm();
+            form.Owner = this;
             form.Show();
         }
 

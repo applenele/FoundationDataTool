@@ -48,6 +48,9 @@ namespace FoundationDataTool.Forms
                 db.Configs.Where(x => x.Id == id).Update(x => new Models.Config { ConfigValue = configValue, ConfigName = configName });
             }
 
+            ConfigForm form = (ConfigForm)this.Owner;
+            form.LoadConfigList();
+
             this.Close();
         }
     }

@@ -102,6 +102,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddConfigForm";
             this.Text = "AddConfigForm";
+            this.Load += new System.EventHandler(this.AddConfigForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
