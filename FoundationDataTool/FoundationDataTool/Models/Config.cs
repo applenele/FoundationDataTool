@@ -30,5 +30,10 @@ namespace FoundationDataTool.Models
         /// 配置的值
         /// </summary>
         public string ConfigValue { set; get; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public string Remark { set; get; }
     }
 }

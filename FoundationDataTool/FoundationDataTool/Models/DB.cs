@@ -59,7 +59,7 @@ namespace FoundationDataTool.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("");    //增加配置
+            modelBuilder.HasDefaultSchema("");    //增加配置 migration 的注释掉  运行的时候拿掉注释
             base.OnModelCreating(modelBuilder);
         }
     }

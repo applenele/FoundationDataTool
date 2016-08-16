@@ -9,7 +9,8 @@ namespace FoundationDataTool.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(FoundationDataTool.Models.DB context)
