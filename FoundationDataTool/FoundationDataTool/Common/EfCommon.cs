@@ -6,14 +6,16 @@
 *电子邮箱：1941973283@qq.com
 /**********************************************/
 
+using EntityFramework.Extensions;
 using FoundationDataTool.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Z.EntityFramework.Plus;
 
 namespace FoundationDataTool.Common
 {
@@ -27,7 +29,6 @@ namespace FoundationDataTool.Common
         {
             using (DB db = new DB())
             {
-                db.Set<T>().AddRange(entities);
                 db.BulkInsert(entities);
             }
         }
@@ -46,7 +47,6 @@ namespace FoundationDataTool.Common
 
         /// <summary>
         /// 实现按需要只更新部分更新
-        /// <para>如：Update(u =>u.Id==1,u =>new User{Name="ok"});</para>
         /// </summary>
         /// <param name="where">The where.</param>
         /// <param name="entity">The entity.</param>
@@ -70,5 +70,6 @@ namespace FoundationDataTool.Common
                 return db.Set<T>().Any(exp);
             }
         }
+
     }
 }

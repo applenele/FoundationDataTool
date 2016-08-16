@@ -6,6 +6,8 @@
 *电子邮箱：1941973283@qq.com
 /**********************************************/
 
+using EntityFramework.Batch;
+using MySql.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,8 +17,8 @@ using System.Threading.Tasks;
 
 namespace FoundationDataTool.Models
 {
-    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
-    public class DB:DbContext
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
+    public class DB : DbContext
     {
         public DB() : base("name =mysqldb")
         {
@@ -50,8 +52,14 @@ namespace FoundationDataTool.Models
         /// </summary>
         public DbSet<Village> Villages { set; get; }
 
+        /// <summary>
+        /// 配置
+        /// </summary>
+        public DbSet<Config> Configs { set; get; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("");    //增加配置
             base.OnModelCreating(modelBuilder);
         }
     }

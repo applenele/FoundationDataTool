@@ -132,5 +132,12 @@ namespace FoundationDataTool
             ModelGenerate form = new ModelGenerate();
             form.Show();
         }
+
+        private void 配置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfigForm configForm = new ConfigForm();
+
+            configForm.Show();
+        }
     }
 }
