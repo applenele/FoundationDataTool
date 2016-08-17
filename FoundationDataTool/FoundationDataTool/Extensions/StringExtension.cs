@@ -65,5 +65,32 @@ namespace FoundationDataTool.Extensions
         {
             return System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(inputValue);
         }
+
+        /// <summary>
+        /// 转中文
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string ToChinese(this string str)
+        {
+            string outStr = "";
+            if (!string.IsNullOrEmpty(str))
+            {
+                string[] strlist = str.Replace("/", "").Split('u');
+                try
+                {
+                    for (int i = 1; i < strlist.Length; i++)
+                    {
+                        //将unicode字符转为10进制整数，然后转为char中文字符  
+                        outStr += (char)int.Parse(strlist[i], System.Globalization.NumberStyles.HexNumber);
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    outStr = ex.Message;
+                }
+            }
+            return outStr;
+        }
     }
 }

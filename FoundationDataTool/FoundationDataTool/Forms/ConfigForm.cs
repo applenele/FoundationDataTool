@@ -104,6 +104,7 @@ namespace FoundationDataTool.Forms
         /// <summary>
         /// 快捷键
         /// 注意：把 Form 的 KeyPreview 属性设为 True 
+        /// 另外的，与窗体的AcceptButton属性相关联的按钮，将与键盘上的Enter键对应；与窗体的CancelButton属性相关联的按钮，将与键盘上的Ecs键对应。
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

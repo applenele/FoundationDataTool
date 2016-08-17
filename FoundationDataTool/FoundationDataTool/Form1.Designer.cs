@@ -38,6 +38,8 @@
             this.连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.实体生成器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.接口获取数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weatherApiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +66,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.查看ToolStripMenuItem,
             this.数据库工具ToolStripMenuItem,
-            this.配置ToolStripMenuItem});
+            this.配置ToolStripMenuItem,
+            this.接口获取数据ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(516, 25);
@@ -98,14 +101,14 @@
             // 连接ToolStripMenuItem
             // 
             this.连接ToolStripMenuItem.Name = "连接ToolStripMenuItem";
-            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.连接ToolStripMenuItem.Text = "连接";
             this.连接ToolStripMenuItem.Click += new System.EventHandler(this.连接ToolStripMenuItem_Click);
             // 
             // 实体生成器ToolStripMenuItem
             // 
             this.实体生成器ToolStripMenuItem.Name = "实体生成器ToolStripMenuItem";
-            this.实体生成器ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.实体生成器ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.实体生成器ToolStripMenuItem.Text = "实体生成器";
             this.实体生成器ToolStripMenuItem.Click += new System.EventHandler(this.实体生成器ToolStripMenuItem_Click);
             // 
@@ -115,6 +118,21 @@
             this.配置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.配置ToolStripMenuItem.Text = "配置";
             this.配置ToolStripMenuItem.Click += new System.EventHandler(this.配置ToolStripMenuItem_Click);
+            // 
+            // 接口获取数据ToolStripMenuItem
+            // 
+            this.接口获取数据ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.weatherApiToolStripMenuItem});
+            this.接口获取数据ToolStripMenuItem.Name = "接口获取数据ToolStripMenuItem";
+            this.接口获取数据ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.接口获取数据ToolStripMenuItem.Text = "接口获取数据";
+            // 
+            // weatherApiToolStripMenuItem
+            // 
+            this.weatherApiToolStripMenuItem.Name = "weatherApiToolStripMenuItem";
+            this.weatherApiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.weatherApiToolStripMenuItem.Text = "获取天气";
+            this.weatherApiToolStripMenuItem.Click += new System.EventHandler(this.weatherApiToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -146,6 +164,8 @@
         private System.Windows.Forms.ToolStripMenuItem 连接ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 实体生成器ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 配置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 接口获取数据ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weatherApiToolStripMenuItem;
     }
 }
 

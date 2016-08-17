@@ -1,6 +1,7 @@
 ﻿using FoundationDataTool.Common;
 using FoundationDataTool.DataModels;
 using FoundationDataTool.Forms;
+using FoundationDataTool.Helper;
 using FoundationDataTool.Models;
 using FoundationDataTool.Tool.MySql;
 using FoundationDataTool.WinFormExt;
@@ -31,7 +32,7 @@ namespace FoundationDataTool
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             ListItem listItem0 = new ListItem("0", "选择导入的数据类型");
             ListItem listItem1 = new ListItem("1", "省");
             ListItem listItem2 = new ListItem("2", "市");
@@ -138,6 +139,16 @@ namespace FoundationDataTool
             ConfigForm configForm = new ConfigForm();
 
             configForm.Show();
+        }
+
+        private void weatherApiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WeatherForm form = new WeatherForm();
+            form.Owner = this;
+
+            form.Show();
+
+           
         }
     }
 }
