@@ -100,5 +100,19 @@ namespace FoundationDataTool.Forms
         {
             LoadConfigList();
         }
+
+        /// <summary>
+        /// 快捷键
+        /// 注意：把 Form 的 KeyPreview 属性设为 True 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ConfigForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.N && e.Modifiers == Keys.Control)
+            {
+                btnAddConfig_Click(this, EventArgs.Empty);
+            }
+        }
     }
 }

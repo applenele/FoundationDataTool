@@ -101,9 +101,11 @@
             this.Controls.Add(this.btnAddConfig);
             this.Controls.Add(this.dgwConfig);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "ConfigForm";
             this.Text = "ConfigForm";
             this.Load += new System.EventHandler(this.ConfigForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ConfigForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgwConfig)).EndInit();
             this.ConfigListContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
