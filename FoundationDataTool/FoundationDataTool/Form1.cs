@@ -32,7 +32,6 @@ namespace FoundationDataTool
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-
             ListItem listItem0 = new ListItem("0", "选择导入的数据类型");
             ListItem listItem1 = new ListItem("1", "省");
             ListItem listItem2 = new ListItem("2", "市");

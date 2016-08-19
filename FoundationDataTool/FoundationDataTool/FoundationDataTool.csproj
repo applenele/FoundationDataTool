@@ -176,6 +176,7 @@
     <Compile Include="Helper\ConfigurationHelper.cs" />
     <Compile Include="Helper\DataTableHelper.cs" />
     <Compile Include="Helper\HttpHelper.cs" />
+    <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Migrations\201608070843599_init.cs" />
     <Compile Include="Migrations\201608070843599_init.Designer.cs">
       <DependentUpon>201608070843599_init.cs</DependentUpon>
