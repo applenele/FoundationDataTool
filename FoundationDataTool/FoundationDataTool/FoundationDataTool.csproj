@@ -142,6 +142,12 @@
     <Compile Include="Forms\EditConfigForm.Designer.cs">
       <DependentUpon>EditConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LotteryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LotteryForm.Designer.cs">
+      <DependentUpon>LotteryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ModelGenerate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditConfigForm.resx">
       <DependentUpon>EditConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LotteryForm.resx">
+      <DependentUpon>LotteryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModelGenerate.resx">
       <DependentUpon>ModelGenerate.cs</DependentUpon>

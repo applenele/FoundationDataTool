@@ -150,5 +150,11 @@ namespace FoundationDataTool
 
            
         }
+
+        private void lotteryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LotteryForm form = new LotteryForm();
+            form.Show();
+        }
     }
 }
