@@ -90,6 +90,7 @@
     <Compile Include="DataModels\City.cs" />
     <Compile Include="DataModels\CityCode.cs" />
     <Compile Include="DataModels\County.cs" />
+    <Compile Include="DataModels\DataResult\WeatherResult.cs" />
     <Compile Include="DataModels\Town.cs" />
     <Compile Include="DataModels\Village.cs" />
     <Compile Include="Extensions\StringExtension.cs" />

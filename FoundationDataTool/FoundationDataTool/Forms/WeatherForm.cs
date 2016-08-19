@@ -1,4 +1,5 @@
 ﻿using FoundationDataTool.DataModels;
+using FoundationDataTool.DataModels.DataResult;
 using FoundationDataTool.Helper;
 using FoundationDataTool.Models;
 using FoundationDataTool.WinFormExt;
@@ -34,7 +35,7 @@ namespace FoundationDataTool.Forms
             }
             list = Newtonsoft.Json.JsonConvert.DeserializeObject<List<CityCode>>(str);
 
-            ListItem listItem0 = new ListItem("0", "城市");
+            ListItem listItem0 = new ListItem("0", "省");
             cbmCity.Items.Add(listItem0);
             foreach (var item in list)
             {
@@ -62,7 +63,7 @@ namespace FoundationDataTool.Forms
 
                 var countyList = list.Where(x => x.city_id == item.ID).FirstOrDefault();
 
-                ListItem listItem0 = new ListItem("0", "区");
+                ListItem listItem0 = new ListItem("0", "市");
                 cbmCounty.Items.Add(listItem0);
                 foreach (var county in countyList.list)
                 {
@@ -81,11 +82,11 @@ namespace FoundationDataTool.Forms
                 ListItem item = cbmCounty.SelectedItem as ListItem;
                 city = item.ID;
             }
-            else if (cbmCity.SelectedIndex != 0)
-            {
-                ListItem item = cbmCity.SelectedItem as ListItem;
-                city = item.ID;
-            }
+            //else if (cbmCity.SelectedIndex != 0)
+            //{
+            //    ListItem item = cbmCity.SelectedItem as ListItem;
+            //    city = item.ID;
+            //}
             else
             {
                 MessageBox.Show("请选择城市");
@@ -111,9 +112,22 @@ namespace FoundationDataTool.Forms
                 paramList.Add("key=" + configWeatherApiKey.ConfigValue);
                 paramStr = string.Join("&", paramList);
             }
-            string result = HttpHelper.HttpGet(url, paramStr);
-            MessageBox.Show(result);
+            string _result = HttpHelper.HttpGet(url, paramStr);
+            WeatherResult result = Newtonsoft.Json.JsonConvert.DeserializeObject<WeatherResult>(_result);
 
+            StringBuilder sbd = new StringBuilder();
+            if (result.msg == "Sucess")
+            {
+                foreach (var item in result.data.list)
+                {
+                    sbd.AppendFormat("{0}\r\n", item.ToString());
+                }
+                MessageBox.Show(sbd.ToString());
+            }
+            else
+            {
+                MessageBox.Show("获取天气失败:"+result.msg);
+            }
         }
     }
 }
