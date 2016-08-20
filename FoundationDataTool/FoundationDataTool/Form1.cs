@@ -147,12 +147,24 @@ namespace FoundationDataTool
 
             form.Show();
 
-           
+
         }
 
         private void lotteryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LotteryForm form = new LotteryForm();
+            form.Show();
+        }
+
+        /// <summary>
+        /// 二维码生成
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void qrCodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QrCodeForm form = new QrCodeForm();
+
             form.Show();
         }
     }

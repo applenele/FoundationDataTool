@@ -42,6 +42,8 @@
             this.weatherApiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.活动ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lotteryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qrCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,10 +72,11 @@
             this.数据库工具ToolStripMenuItem,
             this.配置ToolStripMenuItem,
             this.接口获取数据ToolStripMenuItem,
-            this.活动ToolStripMenuItem});
+            this.活动ToolStripMenuItem,
+            this.工具ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(516, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(652, 25);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,7 +91,7 @@
             // 查看地域信息ToolStripMenuItem
             // 
             this.查看地域信息ToolStripMenuItem.Name = "查看地域信息ToolStripMenuItem";
-            this.查看地域信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查看地域信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.查看地域信息ToolStripMenuItem.Text = "查看地域信息";
             this.查看地域信息ToolStripMenuItem.Click += new System.EventHandler(this.查看地域信息ToolStripMenuItem_Click);
             // 
@@ -104,14 +107,14 @@
             // 连接ToolStripMenuItem
             // 
             this.连接ToolStripMenuItem.Name = "连接ToolStripMenuItem";
-            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.连接ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.连接ToolStripMenuItem.Text = "连接";
             this.连接ToolStripMenuItem.Click += new System.EventHandler(this.连接ToolStripMenuItem_Click);
             // 
             // 实体生成器ToolStripMenuItem
             // 
             this.实体生成器ToolStripMenuItem.Name = "实体生成器ToolStripMenuItem";
-            this.实体生成器ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.实体生成器ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.实体生成器ToolStripMenuItem.Text = "实体生成器";
             this.实体生成器ToolStripMenuItem.Click += new System.EventHandler(this.实体生成器ToolStripMenuItem_Click);
             // 
@@ -152,11 +155,26 @@
             this.lotteryToolStripMenuItem.Text = "抽奖";
             this.lotteryToolStripMenuItem.Click += new System.EventHandler(this.lotteryToolStripMenuItem_Click);
             // 
+            // 工具ToolStripMenuItem
+            // 
+            this.工具ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.qrCodeToolStripMenuItem});
+            this.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem";
+            this.工具ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.工具ToolStripMenuItem.Text = "工具";
+            // 
+            // qrCodeToolStripMenuItem
+            // 
+            this.qrCodeToolStripMenuItem.Name = "qrCodeToolStripMenuItem";
+            this.qrCodeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.qrCodeToolStripMenuItem.Text = "二维码";
+            this.qrCodeToolStripMenuItem.Click += new System.EventHandler(this.qrCodeToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 337);
+            this.ClientSize = new System.Drawing.Size(652, 412);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.menuStrip1);
@@ -186,6 +204,8 @@
         private System.Windows.Forms.ToolStripMenuItem weatherApiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 活动ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lotteryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 工具ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem qrCodeToolStripMenuItem;
     }
 }
 
