@@ -66,31 +66,74 @@ namespace FoundationDataTool.Extensions
             return System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(inputValue);
         }
 
+
         /// <summary>
-        /// 转中文
+        /// 验证是否为IP地址
         /// </summary>
-        /// <param name="str"></param>
+        /// <param name="source"></param>
         /// <returns></returns>
-        public static string ToChinese(this string str)
+        public static bool IsIP(this string inputValue)
         {
-            string outStr = "";
-            if (!string.IsNullOrEmpty(str))
-            {
-                string[] strlist = str.Replace("/", "").Split('u');
-                try
-                {
-                    for (int i = 1; i < strlist.Length; i++)
-                    {
-                        //将unicode字符转为10进制整数，然后转为char中文字符  
-                        outStr += (char)int.Parse(strlist[i], System.Globalization.NumberStyles.HexNumber);
-                    }
-                }
-                catch (FormatException ex)
-                {
-                    outStr = ex.Message;
-                }
-            }
-            return outStr;
+            /// <summary>
+            /// IP地址判断
+            /// </summary>
+            string regexIP = @"^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$";
+            return Regex.IsMatch(inputValue, regexIP);
         }
+
+        /// <summary>
+        /// 判断输入的字符串是否是一个合法的手机号
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static bool IsMobilePhone(this string input)
+        {
+            Regex regex = new Regex("^1[3458]\\d{9}$");
+            return regex.IsMatch(input);
+
+        }
+
+
+        /// <summary>
+        /// 取Href值
+        /// </summary>
+        /// <param name="source">〈a〉</param>
+        /// <returns>Href</returns>
+        public static string ParseHref(this string source)
+        {
+            string result = string.Empty;
+            /// <summary>
+            /// 匹配所有的href标签href=["'\s]?(.*?)["'\s>]
+            /// </summary>
+            string rxgethref = "href=[" + "\"" + @"'\s]?(.*?)[" + "\"" + @"'\s>]";
+            if (Regex.IsMatch(source, rxgethref))
+            {
+                Match ms = Regex.Match(source, rxgethref);
+                result = ms.Groups[1].Value;
+                result = result.Replace("\"", string.Empty);
+                result = result.Replace("'", string.Empty);
+            }
+            return result;
+        }
+
+
+        /// <summary>
+        /// 去掉所有的Script标签
+        /// </summary>
+        /// <param name="returnstr">Html代码</param>
+        /// <returns>结果</returns>
+        public static string GetNullScriptHtml(this string returnstr)
+        {
+            /// <summary>
+            /// 匹配所有的Script标签
+            /// </summary>
+            string rxScritp = @"<script[^>]*?>.*?</script>";
+            returnstr = Regex.Replace(returnstr, rxScritp, "");
+            return returnstr;
+        }
+
+        
+
+
     }
 }

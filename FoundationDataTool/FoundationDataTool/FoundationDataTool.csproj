@@ -183,9 +183,13 @@
     <Compile Include="Forms\WeatherForm.Designer.cs">
       <DependentUpon>WeatherForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Base64Helper.cs" />
+    <Compile Include="Helper\CodedConversionHelper.cs" />
     <Compile Include="Helper\ConfigurationHelper.cs" />
     <Compile Include="Helper\DataTableHelper.cs" />
     <Compile Include="Helper\DateHelper.cs" />
+    <Compile Include="Helper\DESEncrypt.cs" />
+    <Compile Include="Helper\FilterHelper.cs" />
     <Compile Include="Helper\HttpHelper.cs" />
     <Compile Include="Helper\QRCodeHelper.cs" />
     <Compile Include="Helper\StringHelper.cs" />

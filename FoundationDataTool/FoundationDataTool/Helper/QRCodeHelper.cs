@@ -35,6 +35,11 @@ namespace FoundationDataTool.Helper
             return image;
         }
 
+        /// <summary>
+        /// 识别二维码
+        /// </summary>
+        /// <param name="image"></param>
+        /// <returns></returns>
         public static string RecognizeQrCode(Image image)
         {
             QRCodeDecoder qrDecoder = new QRCodeDecoder();//创建一个解码器
