@@ -36,16 +36,16 @@ namespace FoundationDataTool.Forms
             list = Newtonsoft.Json.JsonConvert.DeserializeObject<List<CityCode>>(str);
 
             ListItem listItem0 = new ListItem("0", "省");
-            cbmCity.Items.Add(listItem0);
+            cbmProvince.Items.Add(listItem0);
             foreach (var item in list)
             {
                 ListItem listItem = new ListItem(item.city_id, item.name);
-                cbmCity.Items.Add(listItem);
+                cbmProvince.Items.Add(listItem);
             }
 
             //设置默认选择项，DropDownList会默认选择第一项。
             // cbmCity.SelectedIndex = 0;//设置第一项为默认选择项。
-            cbmCity.SelectedItem = listItem0;//设置指定的项为默认选择项
+            cbmProvince.SelectedItem = listItem0;//设置指定的项为默认选择项
 
         }
 
@@ -56,21 +56,27 @@ namespace FoundationDataTool.Forms
         /// <param name="e"></param>
         private void cbmCity_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cbmCounty.Items.Clear();
+            cbmCounty.Text = "";
             if (cbmCity.SelectedIndex != 0)
             {
-                cbmCounty.Items.Clear();
-                ListItem item = cbmCity.SelectedItem as ListItem;
+                ListItem provinceItem = cbmProvince.SelectedItem as ListItem;
+                ListItem cityItem = cbmCity.SelectedItem as ListItem;
 
-                var countyList = list.Where(x => x.city_id == item.ID).FirstOrDefault();
+                var province = list.Where(x => x.city_id == provinceItem.ID).FirstOrDefault();
+                var city = province.list.Where(x => x.city_id == cityItem.ID).FirstOrDefault();
 
-                ListItem listItem0 = new ListItem("0", "市");
-                cbmCounty.Items.Add(listItem0);
-                foreach (var county in countyList.list)
+                if (city.list != null)
                 {
-                    ListItem listItem = new ListItem(county.city_id, county.name);
-                    cbmCounty.Items.Add(listItem);
+                    ListItem listItem0 = new ListItem("0", "区");
+                    cbmCounty.Items.Add(listItem0);
+                    foreach (var county in city.list)
+                    {
+                        ListItem listItem = new ListItem(county.city_id, county.name);
+                        cbmCounty.Items.Add(listItem);
+                    }
+                    cbmCounty.SelectedItem = listItem0;//设置指定的项为默认选择项
                 }
-                cbmCounty.SelectedItem = listItem0;
             }
         }
 
@@ -79,14 +85,18 @@ namespace FoundationDataTool.Forms
             string city = "";
             if (cbmCounty.SelectedIndex != 0)
             {
-                ListItem item = cbmCounty.SelectedItem as ListItem;
-                city = item.ID;
+                ListItem countyItem = cbmCounty.SelectedItem as ListItem;
+                if (countyItem != null)
+                {
+                    city = countyItem.ID;
+                }
+                else
+                {
+                    ListItem cityItem = cbmCity.SelectedItem as ListItem;
+                    city = cityItem.ID;
+                }
+
             }
-            //else if (cbmCity.SelectedIndex != 0)
-            //{
-            //    ListItem item = cbmCity.SelectedItem as ListItem;
-            //    city = item.ID;
-            //}
             else
             {
                 MessageBox.Show("请选择城市");
@@ -126,8 +136,31 @@ namespace FoundationDataTool.Forms
             }
             else
             {
-                MessageBox.Show("获取天气失败:"+result.msg);
+                MessageBox.Show("获取天气失败:" + result.msg);
             }
         }
+
+        private void cbmProvince_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbmCity.Items.Clear();
+            cbmCity.Text = "";
+            if (cbmProvince.SelectedIndex != 0)
+            {
+                ListItem item = cbmProvince.SelectedItem as ListItem;
+                var province = list.Where(x => x.city_id == item.ID).FirstOrDefault();
+
+                ListItem listItem0 = new ListItem("0", "市");
+                cbmCity.Items.Add(listItem0);
+                foreach (var city in province.list)
+                {
+                    ListItem listItem = new ListItem(city.city_id, city.name);
+                    cbmCity.Items.Add(listItem);
+                }
+                cbmCity.SelectedItem = listItem0;//设置指定的项为默认选择项
+            }
+
+        }
+
+
     }
 }

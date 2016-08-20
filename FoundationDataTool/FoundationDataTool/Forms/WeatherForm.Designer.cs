@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WeatherForm));
             this.btnGetWeather = new System.Windows.Forms.Button();
+            this.cbmProvince = new System.Windows.Forms.ComboBox();
             this.cbmCity = new System.Windows.Forms.ComboBox();
             this.cbmCounty = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -44,22 +45,31 @@
             this.btnGetWeather.UseVisualStyleBackColor = true;
             this.btnGetWeather.Click += new System.EventHandler(this.btnGetWeather_Click);
             // 
+            // cbmProvince
+            // 
+            this.cbmProvince.FormattingEnabled = true;
+            this.cbmProvince.Location = new System.Drawing.Point(74, 53);
+            this.cbmProvince.Name = "cbmProvince";
+            this.cbmProvince.Size = new System.Drawing.Size(121, 20);
+            this.cbmProvince.TabIndex = 1;
+            this.cbmProvince.SelectedIndexChanged += new System.EventHandler(this.cbmProvince_SelectedIndexChanged);
+            // 
             // cbmCity
             // 
             this.cbmCity.FormattingEnabled = true;
-            this.cbmCity.Location = new System.Drawing.Point(74, 53);
+            this.cbmCity.Location = new System.Drawing.Point(248, 53);
             this.cbmCity.Name = "cbmCity";
             this.cbmCity.Size = new System.Drawing.Size(121, 20);
-            this.cbmCity.TabIndex = 1;
+            this.cbmCity.TabIndex = 2;
             this.cbmCity.SelectedIndexChanged += new System.EventHandler(this.cbmCity_SelectedIndexChanged);
             // 
             // cbmCounty
             // 
             this.cbmCounty.FormattingEnabled = true;
-            this.cbmCounty.Location = new System.Drawing.Point(248, 53);
+            this.cbmCounty.Location = new System.Drawing.Point(405, 53);
             this.cbmCounty.Name = "cbmCounty";
             this.cbmCounty.Size = new System.Drawing.Size(121, 20);
-            this.cbmCounty.TabIndex = 2;
+            this.cbmCounty.TabIndex = 3;
             // 
             // WeatherForm
             // 
@@ -68,6 +78,7 @@
             this.ClientSize = new System.Drawing.Size(590, 399);
             this.Controls.Add(this.cbmCounty);
             this.Controls.Add(this.cbmCity);
+            this.Controls.Add(this.cbmProvince);
             this.Controls.Add(this.btnGetWeather);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WeatherForm";
@@ -80,6 +91,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnGetWeather;
+        private System.Windows.Forms.ComboBox cbmProvince;
         private System.Windows.Forms.ComboBox cbmCity;
         private System.Windows.Forms.ComboBox cbmCounty;
     }
